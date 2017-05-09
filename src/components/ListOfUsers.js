@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class ListOfUsers extends Component {
   constructor(){
@@ -43,5 +44,13 @@ class ListOfUsers extends Component {
           </div>)
   }
 }
+//always namne this function the same thing. always return san object.
+function mapStateToProps(state) {
+  return {
+    users:state.users
+  }
+}
 
-export default ListOfUsers;
+const ListOfUsersContainer = connect(mapStateToProps)(ListOfUsers);
+export default ListOfUsersContainer
+
