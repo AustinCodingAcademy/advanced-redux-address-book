@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {chooseCurrentUser} from '../actions';
+import {setSearchText} from '../actions';
 
 class ListOfUsers extends Component {
   constructor(){
@@ -11,7 +13,10 @@ class ListOfUsers extends Component {
     var userDivs = "";
     if(this.state.visible){
       buttonText = "Hide";
-      userDivs = this.props.users.map((user) => {
+      const filterUsers = this.props.users.filter((u) => {
+        return u.first_name.indexOf(this.props.searchText) > -1;
+      });
+      userDivs = filterUsers.map((user) => {
         return <div>
             {user.first_name} - {user.last_name}
             <a href="#" onClick={
@@ -29,7 +34,7 @@ class ListOfUsers extends Component {
     return (<div>
             <input onChange={
               (e) => {
-                  this.props.filterUsers(e.target.value)
+                  this.props.setSearchText(e.target.value)
               }
             } />
             <button onClick={()=>{
@@ -44,13 +49,6 @@ class ListOfUsers extends Component {
           </div>)
   }
 }
-//always namne this function the same thing. always return san object.
-function mapStateToProps(state) {
-  return {
-    users:state.users
-  }
-}
 
-const ListOfUsersContainer = connect(mapStateToProps)(ListOfUsers);
-export default ListOfUsersContainer
+export default ListOfUsers;
 
