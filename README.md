@@ -10,3 +10,14 @@ export default {
   searchText: ""
 }
 ```
+2. create store.js
+```javascript
+import {createStore} from 'redux';
+
+import state from "./state";
+
+var store = createStore(function(){}, state);
+
+export default store;
+```
+
