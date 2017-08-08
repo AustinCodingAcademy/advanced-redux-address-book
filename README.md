@@ -1,4 +1,4 @@
-#REDUX, YO
+# REDUX, YO
 1. create state.js in /src
 ```javascript
 import users from "./users";
