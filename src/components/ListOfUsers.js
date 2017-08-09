@@ -13,12 +13,12 @@ class ListOfUsers extends Component {
       buttonText = "Hide";
       userDivs = this.props.users.map((user) => {
         return (
-          <div>
+          <div key={user.id}>
             {user.firstName} - {user.lastName}
             <a href="#" onClick={
               (e)=>{
                 e.preventDefault();
-                this.props.chooseUser(user);
+                /* this.props.chooseUser(user); */
               }
             }> View </a>
         </div>

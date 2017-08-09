@@ -7,15 +7,15 @@ import store from "./store";
 import {Provider} from "react-redux";
 
 var currentUser  = null;
-let filteredUsers = users;
-
-
-function filterUsers(name){
-  filteredUsers = users.filter(function(u){
-    return u.firstName === name;
-  });
-  render();
-}
+// let filteredUsers = users;
+//
+//
+// function filterUsers(name){
+//   filteredUsers = users.filter(function(u){
+//     return u.firstName === name;
+//   });
+//   render();
+// }
 function chooseUser(user){
   currentUser = user;
   render();
