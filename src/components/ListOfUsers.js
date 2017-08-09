@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class ListOfUsers extends Component {
   constructor(){
@@ -11,7 +12,8 @@ class ListOfUsers extends Component {
     if(this.state.visible){
       buttonText = "Hide";
       userDivs = this.props.users.map((user) => {
-        return <div>
+        return (
+          <div>
             {user.firstName} - {user.lastName}
             <a href="#" onClick={
               (e)=>{
@@ -20,6 +22,7 @@ class ListOfUsers extends Component {
               }
             }> View </a>
         </div>
+        );
       });
     }else{
       buttonText = "Show";
@@ -44,4 +47,15 @@ class ListOfUsers extends Component {
   }
 }
 
-export default ListOfUsers;
+function mapStateToProps(state) {
+  return {
+    users: state.users,
+  };
+}
+
+/*
+  let otherfunction = connect(mapStateToProps);
+  const ListOfUsersContainer = otherfunction(ListOfUsers);
+*/
+const ListOfUsersContainer = connect(mapStateToProps)(ListOfUsers);
+export default ListOfUsersContainer

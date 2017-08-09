@@ -3,8 +3,12 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
 import users from './users';
+import store from "./store";
+import {Provider} from "react-redux";
+
 var currentUser  = null;
 let filteredUsers = users;
+
 
 function filterUsers(name){
   filteredUsers = users.filter(function(u){
@@ -19,11 +23,7 @@ function chooseUser(user){
 
 function render(){
   ReactDOM.render(
-    <App 
-    filterUsers={filterUsers}
-    user={currentUser} 
-    users={filteredUsers} 
-    chooseUser={chooseUser}/>,
+    <Provider store={store}><App /></Provider>,
     document.getElementById('root')
   );
 }
