@@ -65,7 +65,7 @@ ReactDOM.render(
     });
 
 ```
-- do this for each data point in state
+    - do this for each data point in state
 
 3. import reducers into store.js and pass them in as the first arg in createStore
 ```javascript
