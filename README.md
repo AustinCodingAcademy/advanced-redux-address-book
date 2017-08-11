@@ -73,4 +73,22 @@ ReactDOM.render(
 
     const store = createStore(reducers, state);  
 ``` 
+### mapStateToProps
+- instead of passing props from parent to child, we now only have to decide which parts of state we want to use as props for a component
+1. outside of the react component, create a function mapStateToProps
+    - pass in state
+    - return an object containing the data neeeded from state
+```javascript
+    function mapStateToProps(state) {
+        return {
+            users: state.users
+        }
+    }
+```
+
+2. the react component and redux must now be connected
+```javascript
+    const ListOfUsersContainer = connect(mapStateToProps)(ListOfUsers);
+    export default ListOfUsersContainer;
+```
 
