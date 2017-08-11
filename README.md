@@ -53,7 +53,7 @@ ReactDOM.render(
 2. create functions
     - function name must be the same as the state value it retrieves and edits
     - pass in state and action, where state's default value is whatever it is susupposed to be
-- ```javascript
+```javascript
     import {combineReducers} from 'redux';
 
     function users(state = [], action) {
@@ -65,8 +65,7 @@ ReactDOM.render(
     });
 
 ```
-
-    - do this for each data point in state
+- do this for each data point in state
 
 3. import reducers into store.js and pass them in as the first arg in createStore
 ```javascript
