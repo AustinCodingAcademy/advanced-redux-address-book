@@ -66,5 +66,10 @@ ReactDOM.render(
 
 ```
 
-3. 
+3. import reducers into store.js and pass them in as the first arg in createStore
+```javascript
+    import reducers from "./reducers/index"
+
+    const store = createStore(reducers, state);  
+``` 
 
