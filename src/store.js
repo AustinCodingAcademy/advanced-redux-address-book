@@ -1,5 +1,5 @@
 import {createStore} from 'redux';
-import state from "./store";
+import state from "./state";
 
 const store = createStore(function(){}, state);
 
