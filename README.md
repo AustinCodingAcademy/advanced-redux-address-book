@@ -13,8 +13,8 @@ export default {
 }
 ```
 ### Store
-- Where the state is held?
-1. create store.js
+- Where state is held
+1. create store.js in /src
 ```javascript
 import {createStore} from 'redux';
 
@@ -37,8 +37,10 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
-### reducers
+### Reducers
 - functions specific to each piece of data used for retrieval and editing their assigned data...piece
 - create reducers in /src/reducers/index.js
-
+```javascript
+    import {combineReducers} from 'redux';
+```
 
