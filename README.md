@@ -21,6 +21,7 @@ var store = createStore(function(){}, state);
 
 export default store;
 ```
+
     2. import react-redux to link the two
 ```javascript
 import store from './store';
