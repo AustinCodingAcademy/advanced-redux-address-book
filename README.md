@@ -46,7 +46,9 @@ ReactDOM.render(
     const rootReducer = combineReducers({
         users, currentUser, searchText
     });
+    export default rootReducers;
 ```
+###### Note: don't worry about understanding root reducers for now, just understand we need them
 
 2. create functions
     - function name must be the same as the state value it retrieves and edits
