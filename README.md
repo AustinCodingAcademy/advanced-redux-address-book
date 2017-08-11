@@ -38,10 +38,7 @@ ReactDOM.render(
 );
 ```
 ### reducers
-    - functions specific to each piece of
-data used for retrieval and editing their assigned data...piece
-    - create reducers in /src/reducers index.js
-    - ```javascript
-import {combineReducers} from 'redux';
-```
+- functions specific to each piece of data used for retrieval and editing their assigned data...piece
+- create reducers in /src/reducers/index.js
+
 
