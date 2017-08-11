@@ -52,9 +52,16 @@ ReactDOM.render(
     - function name must be the same as the state value it retrieves and edits
     - pass in state and action, where state's default value is whatever it is susupposed to be
 ```javascript
+    import {combineReducers} from 'redux';
+
     function users(state = [], action) {
 
     }
+
+    const rootReducer = combineReducers({
+        users, currentUser, searchText
+    });
+
 ```
 
 3. 
