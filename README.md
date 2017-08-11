@@ -39,8 +39,17 @@ ReactDOM.render(
 ```
 ### Reducers
 - functions specific to each piece of data used for retrieval and editing their assigned data...piece
-- create reducers in /src/reducers/index.js
+1. create reducers in /src/reducers/index.js
 ```javascript
     import {combineReducers} from 'redux';
+
+    function users(state, action){
+
+    }
+
+    const rootReducer = combineReducers({
+        users, currentUser, searchText
+    });
 ```
+
 
