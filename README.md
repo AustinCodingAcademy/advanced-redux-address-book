@@ -1,4 +1,6 @@
 # REDUX, YO
+### State
+- Used to hold data for entire app
 1. create state.js in /src
 ```javascript
 import users from "./users";
@@ -10,8 +12,9 @@ export default {
   searchText: ""
 }
 ```
-2. using store in index.js
-    1. create store.js
+### Store
+- Where the state is held?
+1. create store.js
 ```javascript
 import {createStore} from 'redux';
 
@@ -22,7 +25,7 @@ var store = createStore(function(){}, state);
 export default store;
 ```
 
-    2. import react-redux to link the two
+2. import react-redux to link the two
 ```javascript
 import store from './store';
 import {Provider} from 'react-redux';
@@ -34,7 +37,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
-3. reducers
+### reducers
     - functions specific to each piece of
 data used for retrieval and editing their assigned data...piece
     - create reducers in /src/reducers index.js
