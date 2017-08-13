@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PhoneNumber from "./PhoneNumber";
 import NumberOfUsers from "./NumberOfUsersCounter";
 
@@ -8,7 +8,7 @@ function UserInfo (props){
        <div>
         <h3>{user.firstName} {user.lastName}</h3>
         <h4>{user.occupation}</h4>
-        <p><PhoneNumber number={user.phone} /></p>
+        <PhoneNumber number={user.phone} />
         <p>
           {user.address}
         </p>

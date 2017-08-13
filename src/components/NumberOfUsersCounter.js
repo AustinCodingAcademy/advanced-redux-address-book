@@ -1,11 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
+import {connect} from 'react-redux';
 
 function NumberOfUsersCounter (props){
     return (
        <div>
-        <h3>This is how many users there are: {props.numberOfUsers}</h3>
+        <h3>This is how many users there are: {props.users.length}</h3>
       </div>
     );
 }
 
-export default NumberOfUsersCounter;
+const mapStateToProps = (state) => {
+ return {
+   users: state.users
+ };
+};
+
+const NumberOfUsersCounterContainer = connect(mapStateToProps)(NumberOfUsersCounter);
+export default NumberOfUsersCounterContainer
