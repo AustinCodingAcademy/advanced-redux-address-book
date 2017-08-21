@@ -12,7 +12,7 @@ class ListOfUsers extends Component {
     if(this.state.visible) {
       buttonText = "Hide";
       userDivs = this.props.users.map((user) => {
-        return <div>
+        return (<div>
           {user.firstName} - {user.lastName}
           <a href="#" onClick={
           (e)=>{
@@ -20,7 +20,7 @@ class ListOfUsers extends Component {
             this.props.chooseUser(user);
           }
           }> View </a>
-        </div>
+        </div>);
       });
     } else {
       buttonText = "Show";
