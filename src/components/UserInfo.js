@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PhoneNumber from "./PhoneNumber";
 import NumberOfUsers from "./NumberOfUsersCounter";
 

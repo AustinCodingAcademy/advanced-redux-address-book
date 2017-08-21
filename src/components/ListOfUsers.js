@@ -1,47 +1,58 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class ListOfUsers extends Component {
-  constructor(){
+  constructor() {
     super();
-    this.state =  {visible:true};
+    this.state =  {visible: true};
   }
-  render(){
+  render() {
     var buttonText = "Hide";
     var userDivs = "";
-    if(this.state.visible){
+    if(this.state.visible) {
       buttonText = "Hide";
       userDivs = this.props.users.map((user) => {
-        return <div>
-            {user.firstName} - {user.lastName}
-            <a href="#" onClick={
-              (e)=>{
-                e.preventDefault();
-                this.props.chooseUser(user);
-              }
-            }> View </a>
-        </div>
+        return (<div>
+          {user.firstName} - {user.lastName}
+          <a href="#" onClick={
+          (e)=>{
+            e.preventDefault();
+            this.props.chooseUser(user);
+          }
+          }> View </a>
+        </div>);
       });
-    }else{
+    } else {
       buttonText = "Show";
       userDivs = "";
     }
-    return (<div>
-            <input onChange={
-              (e) => {
-                  this.props.filterUsers(e.target.value)
-              }
-            } />
-            <button onClick={()=>{
-                this.setState({
-                  visible:!this.state.visible
-                });
-              }
-            }>
-              {buttonText}
-            </button>
-            {userDivs}
-          </div>)
+    return (
+      <div>
+        <input onChange={
+          (e) => {
+            this.props.filterUsers(e.target.value)
+          }
+        } />
+        <button onClick={ () => {
+          this.setState({
+            visible:!this.state.visible
+          });
+          }
+        }>
+          {buttonText}
+        </button>
+        {userDivs}
+       </div>
+    )
   }
 }
 
-export default ListOfUsers;
+function mapStateToProps(state) {
+  return {
+  users: state.users
+  };
+}
+
+const ListOfUsersContainer = connect(mapStateToProps)(ListOfUsers);
+export default ListOfUsersContainer;
+
