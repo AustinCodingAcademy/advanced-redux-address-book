@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 
 class ListOfUsers extends Component {
   constructor(){
@@ -44,4 +46,12 @@ class ListOfUsers extends Component {
   }
 }
 
-export default ListOfUsers;
+function mapStateToProps(state){
+  return {
+    users: state.users
+  }
+}
+
+const ListOfUsersContainer = connect(mapStateToProps)(ListOfUsers);
+// connects a fnc and calls another right away on line above 
+export default ListOfUsersContainer
