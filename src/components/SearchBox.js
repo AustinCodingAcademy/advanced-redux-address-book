@@ -1,5 +1,5 @@
 import React from 'react';
-import {setSearchText} from "./actions";
+import {setSearchText} from "../actions";
 import {connect} from "react-redux";
 
 function SearchBox (props){
@@ -16,7 +16,7 @@ function SearchBox (props){
   function mapDispatchToProps(dispatch){
     return {
       setSearchText:function(text){
-        dispatch(chooseUser(text));
+        dispatch(setSearchText(text));
       }
     }
   }

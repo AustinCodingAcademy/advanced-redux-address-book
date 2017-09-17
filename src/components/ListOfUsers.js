@@ -32,11 +32,6 @@ class ListOfUsers extends Component {
       userDivs = "";
     }
     return (<div>
-            <input onChange={
-              (e) => {
-                  this.props.searchText(e.target.value)
-              }
-            } />
 
             <button onClick={()=>{
                 this.setState({

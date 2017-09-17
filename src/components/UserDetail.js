@@ -19,6 +19,6 @@ function mapStateToProps(state){
   }
 }
 
-const UserDetailContainer = connect(mapStateToProps)(UserDetail);
+const UserDetailsContainer = connect(mapStateToProps)(UserDetail);
 // connects a fnc and calls another right away on line above 
-export default UserDetailContainer
+export default UserDetailsContainer
