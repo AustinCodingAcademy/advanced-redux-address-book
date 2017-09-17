@@ -6,6 +6,9 @@ function users(state = [], action) {
 }
 
 function currentUser(state = {}, action) {
+    if (action.type === "CHOOSE_USER"){
+        return action.value;
+    }
     return state;
 }
 

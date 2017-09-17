@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {chooseUser} from "../actions";
 
 
 class ListOfUsers extends Component {
@@ -52,6 +53,14 @@ function mapStateToProps(state){
   }
 }
 
-const ListOfUsersContainer = connect(mapStateToProps)(ListOfUsers);
+function mapDispatchToProps(dispatch){
+  return {
+    chooseUser:function(user){
+      dispatch(chooseUser(user));
+    }
+  }
+}
+
+const ListOfUsersContainer = connect(mapStateToProps,mapDispatchToProps)(ListOfUsers);
 // connects a fnc and calls another right away on line above 
 export default ListOfUsersContainer
