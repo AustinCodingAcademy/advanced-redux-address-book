@@ -5,3 +5,11 @@ export function chooseUser(user){
         value:user
     }
 }
+
+export function setSearchText(text){
+    // this fnc is an action creator
+    return {
+        type: "SET_SEARCH_TEXT",
+        value:text
+    }
+}

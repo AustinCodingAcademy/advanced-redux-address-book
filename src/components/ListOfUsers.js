@@ -13,7 +13,10 @@ class ListOfUsers extends Component {
     var userDivs = "";
     if(this.state.visible){
       buttonText = "Hide";
-      userDivs = this.props.users.map((user) => {
+      const filterUsers = this.props.users.filter((u) => {
+        return u.firstName.indexOf(this.props.searchText) > -1;
+      });
+      userDivs = filterUsers.map((user) => {
         return <div>
             {user.firstName} - {user.lastName}
             <a href="#" onClick={
@@ -31,9 +34,10 @@ class ListOfUsers extends Component {
     return (<div>
             <input onChange={
               (e) => {
-                  this.props.filterUsers(e.target.value)
+                  this.props.searchText(e.target.value)
               }
             } />
+
             <button onClick={()=>{
                 this.setState({
                   visible:!this.state.visible
@@ -49,7 +53,8 @@ class ListOfUsers extends Component {
 
 function mapStateToProps(state){
   return {
-    users: state.users
+    users: state.users,
+    searchText: state.searchText
   }
 }
 

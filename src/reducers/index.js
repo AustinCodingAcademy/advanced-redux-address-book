@@ -17,6 +17,9 @@ function filteredUsers(state = [], action) {
 }
 
 function searchText(state = "", action) {
+    if (action.type === "SET_SEARCH_TEXT"){
+        return action.value;
+    }
     return state;
 }
 
