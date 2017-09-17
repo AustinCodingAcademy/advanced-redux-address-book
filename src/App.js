@@ -2,15 +2,16 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import UserDetail from './components/UserDetail';
-import ListOfUsers from './components/ListOfUsers';
+import ListOfUsersContainer from './containers/ListOfUsersContainer';
 import SearchBox from './components/SearchBox';
+import UserDetailContainer from './containers/UserDetailContainer';
 
 function App (props){
     return (
       <div>
         <SearchBox />
-        <ListOfUsers />
-        <UserDetail />
+        <ListOfUsersContainer />
+        <UserDetailContainer />
       </div>
     );
 }

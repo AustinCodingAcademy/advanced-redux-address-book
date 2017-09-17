@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import UserInfo from './UserInfo';
-import { connect } from 'react-redux';
 
 
 function UserDetail (props){
@@ -13,12 +12,4 @@ function UserDetail (props){
     );
 }
 
-function mapStateToProps(state){
-  return {
-    user: state.currentUser
-  }
-}
-
-const UserDetailsContainer = connect(mapStateToProps)(UserDetail);
-// connects a fnc and calls another right away on line above 
-export default UserDetailsContainer
+export default UserDetail;
